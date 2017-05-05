@@ -1,14 +1,26 @@
 <!Doctype>
 <html data-ng-app="dataApp">
 <head>
-<title>Angular Routing Example</title>
-<base href="/route-example/" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<title ng-bind="ngMeta.title"></title>
+<!-- OR <title>{{ngMeta.title}}</title> -->    
+
+<!-- This meta tag can be set using ngMetaProvider -->
+<meta property="og:type" content="{{ngMeta.ogType}}" />
+
+<!-- Default locale is en_US -->
+<meta property="og:locale" content="{{ngMeta.ogLocale}}" />
+
+<!-- This meta tag changes based on the meta object of each route -->
+<!-- or when the setDescription function is called -->
+<meta name="description" content="{{ngMeta.description}}" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 <link rel="stylesheet" type="text/css" href="css/site.css" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js" ></script>
+<script src="app/ngMeta.min.js"></script>
 <script src="app/app-route.js"></script>
 <script src="app/controller/showDataController.js"></script>
 <script src="app/controller/addController.js"></script>
